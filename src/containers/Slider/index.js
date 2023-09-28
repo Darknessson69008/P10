@@ -11,10 +11,12 @@ const Slider = () => {
     new Date(evtA.date) > new Date(evtB.date) ? -1 : 0
   );
   const nextCard = () => {
+    if (byDateDesc !== undefined) { // ajout verif valeur date
     setTimeout(
-      () => setIndex(index < byDateDesc.length-1 ? index + 1 : 0),
+      () => setIndex(index < byDateDesc.length-1 ? index + 1 : 0), // ajout -1
       5000
     );
+    }
   };
   useEffect(() => {
     nextCard();
