@@ -122,13 +122,13 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        <EventCard
+        {last && (<EventCard // ajout last && pour props
           imageSrc={last?.cover}
           title={last?.title}
           date={new Date(last?.date)}
           small
-          label={last?.type}
-        />
+          label={last?.type} // a la place de boom
+        />)}
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
